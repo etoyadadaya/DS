@@ -49,16 +49,10 @@ def create_users_with_companies(user_list, company_list):
         # создаем компании
         for company in company_list:
             companies.append(Company(name=company))
-            print(company)
-
-        print(companies)
 
         # создаем пользователей
         for user in user_list:
             users.append(User(name=user))
-            print(user)
-
-        print(users)
 
         # устанавливаем для компаний списки пользователей
         for company in companies:
@@ -66,15 +60,12 @@ def create_users_with_companies(user_list, company_list):
                 if company.name == "Apple":
                     if user.name == "John":
                         company.users = [user]
-                        print(f"{company.name} - {user.name}")
                 elif company.name == "Microsoft":
                     if user.name == "Tom":
                         company.users = [user]
-                        print(f"{company.name} - {user.name}")
                 elif company.name == "Google":
                     if user.name == "Bob":
                         company.users = [user]
-                        print(f"{company.name} - {user.name}")
 
         # добавляем компании в базу данных, и вместе с ними добавляются пользователи
         db.add_all(companies)
